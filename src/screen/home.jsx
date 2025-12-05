@@ -3,27 +3,27 @@ import React, { useState, useEffect } from "react";
 import logo from "/logo.svg";
 import banner from "/banner.svg";
 import brand from "/brand.png";
-import spacial_gift from "/special_gift.svg";
+import spacial_gift from "/gift.svg";
 import button from "/button.svg";
 import card_1 from "/text1-cropped.svg";
 import card_2 from "/text2-cropped.svg";
 import card_3 from "/text3-cropped.svg";
 
 export default function Home() {
-  const [seconds, setSeconds] = useState(120);
+    const [seconds, setSeconds] = useState(120);
 
-  useEffect(() => {
-    if (seconds <= 0) return;
-    const timer = setInterval(() => setSeconds(s => s - 1), 1000);
-    return () => clearInterval(timer);
-  }, [seconds]);
+    useEffect(() => {
+        if (seconds <= 0) return;
+        const timer = setInterval(() => setSeconds(s => s - 1), 1000);
+        return () => clearInterval(timer);
+    }, [seconds]);
 
-  const mins = String(Math.floor(seconds / 60)).padStart(2, "0");
-  const secs = String(seconds % 60).padStart(2, "0");
+    const mins = String(Math.floor(seconds / 60)).padStart(2, "0");
+    const secs = String(seconds % 60).padStart(2, "0");
 
-  return (
-    <div className="landing">
-      <style jsx>{`
+    return (
+        <div className="landing">
+            <style jsx>{`
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Bebas+Neue&display=swap');
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -175,46 +175,49 @@ export default function Home() {
         }
       `}</style>
 
-      {/* Top Bar */}
-      <header className="topbar">
-        <img src={logo} alt="logo" />
-        <img src={banner} alt="banner" />
-        <img src={brand} alt="brand" />
-      </header>
+            {/* Top Bar */}
+            <header className="topbar">
+                <img src={logo} alt="logo" />
+                <img src={banner} alt="banner" />
+                <img src={brand} alt="brand" />
+            </header>
 
-      {/* Hero */}
-      <section className="hero">
-        <h1>
-          BUXORO SHAHRI MARKAZIDAN BOSH<br />
-          TO‘LOVSIZ <span className="accent">OYIGA 3.5 MLNDAN TO‘LAB</span><br />
-          TA’MIRLANGAN XONADON OLING
-        </h1>
+            {/* Hero */}
+            <section className="hero">
+                <h1>
+                    BUXORO SHAHRI MARKAZIDAN BOSH<br />
+                    TO‘LOVSIZ <span className="accent">OYIGA 3.5 MLNDAN TO‘LAB</span><br />
+                    TA’MIRLANGAN XONADON OLING
+                </h1>
 
-        <div className="hero-wrapper">
-          <img className="hero-man" src="/img.png" alt="taqdimotchi" />
-          <a href="https://t.me/namozgohcity_aksiya" className="floating-btn">
-            <img src={button} alt="Qo‘shilish" />
-          </a>
+                <div className="hero-wrapper">
+                    <img className="hero-man" src="/img.png" alt="taqdimotchi" />
+                    <a href="https://t.me/namozgohcity_aksiya" className="floating-btn">
+                        <img src={button} alt="Qo‘shilish" />
+                    </a>
+                </div>
+            </section>
+
+            {/* Taymer */}
+            <div className="timer">{mins}:{secs}</div>
+
+            {/* Sovg‘a */}
+            <img src={spacial_gift} alt="Maxsus sovg‘a" className="gift-img" />
+
+            {/* 3 ta kartochka */}
+            <h3 style={{ position: "relative", top: "-15px", transform: "translateY(-25px)" }}>
+                TAQDIMOTDA QATNASHIB SIZ:
+            </h3>
+            <div className="cards">
+                <img src={card_1} alt="1" />
+                <img src={card_2} alt="2" />
+                <img src={card_3} alt="3" />
+            </div>
+
+            {/* Pastdagi tugma */}
+            <a href="https://t.me/namozgohcity_aksiya" className="bottom-btn">
+                <img src={button} alt="Qo‘shilish" />
+            </a>
         </div>
-      </section>
-
-      {/* Taymer */}
-      <div className="timer">{mins}:{secs}</div>
-
-      {/* Sovg‘a */}
-      <img src={spacial_gift} alt="Maxsus sovg‘a" className="gift-img" />
-
-      {/* 3 ta kartochka */}
-      <div className="cards">
-        <img src={card_1} alt="1" />
-        <img src={card_2} alt="2" />
-        <img src={card_3} alt="3" />
-      </div>
-
-      {/* Pastdagi tugma */}
-      <a href="https://t.me/namozgohcity_aksiya" className="bottom-btn">
-        <img src={button} alt="Qo‘shilish" />
-      </a>
-    </div>
-  );
+    );
 }
