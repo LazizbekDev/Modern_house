@@ -55,7 +55,7 @@ export default function Home() {
         /* Hero */
         .hero {
           width: 100%;
-          padding: 20px 16px 100px;
+          padding: 20px 16px 45px;
           text-align: center;
           position: relative;
         }
