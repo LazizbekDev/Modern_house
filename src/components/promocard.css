@@ -1,0 +1,153 @@
+/* parent container to center card */
+.promo-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 62vh;
+}
+
+/* card box */
+.promo-card {
+  background: #fff;
+  border: 2px solid rgba(23, 55, 39, 0.56);
+  border-radius: 27.5px;
+  width: 90%;
+  max-width: 400px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* image wrapper (with margin/gap) */
+.promo-image-wrapper {
+  margin: 17.5px;
+  border-radius: 27.5px;
+  overflow: hidden;
+  height: 200px;
+}
+
+/* image fills wrapper */
+.promo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* text block */
+.promo-text {
+  padding: 24px 16px;
+  text-align: center;
+}
+
+/* Title */
+.promo-title {
+  margin-bottom: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 31.68px;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+  /* -3% approximate */
+  text-transform: uppercase;
+}
+
+/* Paragraph */
+.promo-paragraph {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: #000;
+
+  span {
+    font-weight: 700;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .promo-image-wrapper {
+    height: 160px;
+    margin: 14px;
+  }
+
+  .promo-title {
+    font-size: 24px;
+    letter-spacing: -0.02em;
+  }
+
+  .promo-paragraph {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .promo-image-wrapper {
+    height: 140px;
+    margin: 12px;
+  }
+
+  .promo-title {
+    font-size: 20px;
+  }
+
+  .promo-paragraph {
+    font-size: 13px;
+  }
+}
+
+/* ---- INNER BOX ---- */
+
+.promo-inner-box {
+  border: 2px solid rgba(23, 55, 39, 0.56);
+  border-radius: 27.5px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 400px;
+  background: #fff;
+  text-align: center;
+}
+
+/* number row */
+.promo-number-box {
+  width: 51px;
+  height: 44px;
+  background: #0C5D2B;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 10px auto; /* center + gap=10px */
+}
+
+/* text row */
+.promo-inner-text {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: #000;
+  margin: 0;
+  text-align: center;
+}
+
+/* responsive tweaks */
+@media (max-width: 480px) {
+  .promo-inner-box {
+    padding: 16px;
+  }
+  .promo-number-box {
+    width: 44px;
+    height: 38px;
+    font-size: 18px;
+  }
+  .promo-inner-text {
+    font-size: 14px;
+  }
+}
