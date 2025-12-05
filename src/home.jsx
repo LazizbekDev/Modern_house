@@ -95,7 +95,7 @@ export default function Home() {
         .floating-btn {
           position: absolute;
           left: 50%;
-          bottom: -5%;
+          bottom: -14%;
           transform: translateX(-50%);
           z-index: 10;
           width: 88%;
