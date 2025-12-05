@@ -1,0 +1,54 @@
+.hero-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-image {
+    position: relative;
+    width: 100%;
+    max-width: 450px; /* istasang o‘zgartir */
+}
+
+.hero-man {
+    width: 100%;
+    display: block;
+}
+
+.hero-man {
+    width: 100%;
+    display: block;
+
+    /* ASOSIY QISM: pastdan 20% transparency */
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0,0,0,1) 0%,
+        rgba(0,0,0,1) 80%,
+        rgba(0,0,0,0) 100%
+    );
+
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        rgba(0,0,0,1) 0%,
+        rgba(0,0,0,1) 60%,
+        rgba(0,0,0,0) 100%
+    );
+}
+
+
+/* Button 50% image ichida / 50% tashqarida */
+.floating-btn {
+    position: absolute;
+    left: 50%;
+    bottom: -15%;  /* 50% bosib chiqishi uchun */
+    transform: translateX(-50%);
+    z-index: 5;
+}
+
+.floating-btn img {
+    width: 85vw;
+    max-width: 420px;
+    display: block;
+}

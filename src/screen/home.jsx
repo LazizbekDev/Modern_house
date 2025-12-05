@@ -1,0 +1,220 @@
+// Home.jsx
+import React, { useState, useEffect } from "react";
+import logo from "/logo.svg";
+import banner from "/banner.svg";
+import brand from "/brand.png";
+import spacial_gift from "/special_gift.svg";
+import button from "/button.svg";
+import card_1 from "/text1-cropped.svg";
+import card_2 from "/text2-cropped.svg";
+import card_3 from "/text3-cropped.svg";
+
+export default function Home() {
+  const [seconds, setSeconds] = useState(120);
+
+  useEffect(() => {
+    if (seconds <= 0) return;
+    const timer = setInterval(() => setSeconds(s => s - 1), 1000);
+    return () => clearInterval(timer);
+  }, [seconds]);
+
+  const mins = String(Math.floor(seconds / 60)).padStart(2, "0");
+  const secs = String(seconds % 60).padStart(2, "0");
+
+  return (
+    <div className="landing">
+      <style jsx>{`
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Bebas+Neue&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body, #root { height: 100%; background: white; }
+
+        .landing {
+          min-height: 100vh;
+          font-family: 'Poppins', sans-serif;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 0 0 40px;
+          background: white;
+        }
+
+        /* Top Bar */
+        .topbar {
+          width: 100%;
+          background: #0c2a1a;
+          padding: 14px 16px;
+          border-radius: 0 0 24px 24px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+        }
+
+        .topbar img { height: 38px; object-fit: contain; }
+        .topbar img:last-child { filter: brightness(0) invert(1); }
+
+        /* Hero */
+        .hero {
+          width: 100%;
+          padding: 20px 16px 100px;
+          text-align: center;
+          position: relative;
+        }
+
+        .hero h1 {
+          font-family: "Bebas Neue", sans-serif;
+          font-size: 32.8px;
+          line-height: 1.15;
+          text-transform: uppercase;
+          color: #3a3434;
+          margin-bottom: 20px;
+        }
+
+        .accent {
+          color: #098e3c;
+          font-size: 29px;
+        }
+
+        /* Rasm + mask + tugma */
+        .hero-wrapper {
+          position: relative;
+          width: 100%;
+          max-width: 420px;
+          margin: 0 auto;
+        }
+
+        .hero-man {
+          width: 100%;
+          display: block;
+          border-radius: 24px;
+          box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+
+          /* Pastdan shaffoflik – tugma chiroyli chiqishi uchun */
+          mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+          -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+        }
+
+        .floating-btn {
+          position: absolute;
+          left: 50%;
+          bottom: -18%;
+          transform: translateX(-50%);
+          z-index: 10;
+          width: 88%;
+          max-width: 400px;
+        }
+
+        .floating-btn img {
+          width: 100%;
+          display: block;
+          filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
+        }
+
+        /* Taymer */
+        .timer {
+          margin: 32px auto 20px;
+          font-size: 68px;
+          font-weight: 900;
+          color: #000;
+          text-align: center;
+          text-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Sovg‘a */
+        .gift-img {
+          width: 92%;
+          max-width: 400px;
+          margin: 0 auto 30px;
+          display: block;
+          border-radius: 20px;
+          user-select: none;
+        }
+
+        /* 3 ta kartochka – bo‘sh joy yo‘q! */
+        .cards {
+          width: 92%;
+          max-width: 400px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          gap: 16px; /* faqat chiroyli kichik bo‘shliq */
+        }
+
+        .cards img {
+          width: 100%;
+          border-radius: 20px;
+          display: block;
+        }
+
+        /* Pastdagi tugma */
+        .bottom-btn {
+          width: 88%;
+          max-width: 400px;
+          margin: 40px auto 20px;
+          display: block;
+        }
+
+        .bottom-btn img {
+          width: 100%;
+          filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));
+        }
+
+        /* Responsive */
+        @media (min-width: 480px) {
+          .landing {
+            max-width: 420px;
+            margin: 0 auto;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(0,0,0,0.3);
+          }
+          .hero h1 { font-size: 28px; }
+          .accent { font-size: 31px; }
+          .timer { font-size: 76px; }
+        }
+      `}</style>
+
+      {/* Top Bar */}
+      <header className="topbar">
+        <img src={logo} alt="logo" />
+        <img src={banner} alt="banner" />
+        <img src={brand} alt="brand" />
+      </header>
+
+      {/* Hero */}
+      <section className="hero">
+        <h1>
+          BUXORO SHAHRI MARKAZIDAN BOSH<br />
+          TO‘LOVSIZ <span className="accent">OYIGA 3.5 MLNDAN TO‘LAB</span><br />
+          TA’MIRLANGAN XONADON OLING
+        </h1>
+
+        <div className="hero-wrapper">
+          <img className="hero-man" src="/img.png" alt="taqdimotchi" />
+          <a href="https://t.me/namozgohcity_aksiya" className="floating-btn">
+            <img src={button} alt="Qo‘shilish" />
+          </a>
+        </div>
+      </section>
+
+      {/* Taymer */}
+      <div className="timer">{mins}:{secs}</div>
+
+      {/* Sovg‘a */}
+      <img src={spacial_gift} alt="Maxsus sovg‘a" className="gift-img" />
+
+      {/* 3 ta kartochka */}
+      <div className="cards">
+        <img src={card_1} alt="1" />
+        <img src={card_2} alt="2" />
+        <img src={card_3} alt="3" />
+      </div>
+
+      {/* Pastdagi tugma */}
+      <a href="https://t.me/namozgohcity_aksiya" className="bottom-btn">
+        <img src={button} alt="Qo‘shilish" />
+      </a>
+    </div>
+  );
+}
