@@ -4,9 +4,6 @@ import logo from "/logo.svg";
 import banner from "/banner.svg";
 import brand from "/brand.png";
 import button from "/button.svg";
-import card_1 from "/text1-cropped.svg";
-import card_2 from "/text2-cropped.svg";
-import card_3 from "/text3-cropped.svg";
 import PromotionalCard from "./components/PromotionCard";
 import TextCard from "./components/TextCard";
 
@@ -108,12 +105,10 @@ export default function Home() {
         .floating-btn img {
           width: 100%;
           display: block;
-          filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
         }
 
         /* Taymer */
         .timer {
-          margin: 32px auto 20px;
           font-size: 68px;
           font-weight: 900;
           color: #000;
@@ -178,8 +173,8 @@ export default function Home() {
       {/* Top Bar */}
       <header className="topbar">
         <img src={logo} alt="logo" />
-        <img src={banner} alt="banner" />
-        <img src={brand} alt="brand" />
+        <img src={banner} alt="banner" width={180} />
+        <img src={brand} alt="brand" width={75} />
       </header>
 
       {/* Hero */}

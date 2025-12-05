@@ -44,11 +44,16 @@
     left: 50%;
     bottom: -15%;  /* 50% bosib chiqishi uchun */
     transform: translateX(-50%);
-    z-index: 5;
 }
 
 .floating-btn img {
     width: 85vw;
     max-width: 420px;
     display: block;
+}
+
+.timer {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 42px;
 }
