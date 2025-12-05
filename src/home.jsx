@@ -82,7 +82,7 @@ export default function Home() {
         }
 
         .hero-man {
-          width: 100%;
+          width: 90%;
           display: block;
           border-radius: 24px;
           box-shadow: 0 20px 50px rgba(0,0,0,0.35);
@@ -95,7 +95,7 @@ export default function Home() {
         .floating-btn {
           position: absolute;
           left: 50%;
-          bottom: -18%;
+          bottom: -5%;
           transform: translateX(-50%);
           z-index: 10;
           width: 88%;
@@ -201,18 +201,21 @@ export default function Home() {
                     white-space: nowrap;
                     overflow-wrap: normal;
                     word-break: keep-all;
-                    font-size: 32.8px;
+                    font-size: 27.8px;
                     margin-bottom: 0;
                   }
 
                   @media (max-width: 340px) {
                     .hero-title .line {
-                      font-size: 24px;
+                      font-size: 22px;
+                    }
+                    .topbar img[alt="banner"] {
+                      width: 110px !important;
                     }
                   }
                   @media (max-width: 280px) {
                     .hero-title .line {
-                      font-size: 20px;
+                      font-size: 18px;
                     }
                   }
                 `}</style>
