@@ -82,7 +82,7 @@ export default function Home() {
         }
 
         .hero-man {
-          width: 98%;
+          width: 100%;
           display: block;
           border-radius: 24px;
           box-shadow: 0 20px 50px rgba(0,0,0,0.35);
